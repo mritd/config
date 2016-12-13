@@ -94,10 +94,11 @@ set guioptions-=l
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
-
 " 禁止显示菜单和工具条
 set guioptions-=m
 set guioptions-=T
+" 禁止折行
+set nowrap
 
 " vundle 环境设置
 filetype off
