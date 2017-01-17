@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         end
         docker1.vm.box = "centos/7"
         docker1.vm.hostname = "docker1.node"
-        docker1.vm.network :public_network, ip: "192.168.1.11"
+        docker1.vm.network :public_network, ip: "192.168.1.11",:bridge=>'wlp2s0'
     end
 
     config.vm.define :docker2 do |docker2|
@@ -22,7 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         end
         docker2.vm.box = "centos/7"
         docker2.vm.hostname = "docker2.node"
-        docker2.vm.network :public_network, ip: "192.168.1.12"
+        docker2.vm.network :public_network, ip: "192.168.1.12",:bridge=>'wlp2s0'
     end
 
     config.vm.define :docker3 do |docker3|
@@ -32,7 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         end
         docker3.vm.box = "centos/7"
         docker3.vm.hostname = "docker3.node"
-        docker3.vm.network :public_network, ip: "192.168.1.13"
+        docker3.vm.network :public_network, ip: "192.168.1.13",:bridge=>'wlp2s0'
     end
 
     config.vm.define :docker4 do |docker4|
@@ -42,6 +42,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         end
         docker4.vm.box = "centos/7"
         docker4.vm.hostname = "docker4.node"
-        docker4.vm.network :public_network, ip: "192.168.1.14"
+        docker4.vm.network :public_network, ip: "192.168.1.14",:bridge=>'wlp2s0'
     end
 end
