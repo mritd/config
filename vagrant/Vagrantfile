@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
         # 自定义执行脚本
         docker.vm.provision "shell", path: "init.sh"
         # 检查 box 更新
-        #docker.vm.box_check_update = true
+        docker.vm.box_check_update = false 
         # VirtaulBox相关配置
         docker.vm.provider "virtualbox" do |v|
             # 设置虚拟机的名称
@@ -25,14 +25,16 @@ Vagrant.configure("2") do |config|
             docker_disk = "/data/vm/disk/docker-disk#{i}.vdi"
             data_disk = "/data/vm/disk/data-disk#{i}.vdi"
             if ARGV[0] == "up"
-                v.customize [
-                    'storagectl', :id,
-                    '--name', 'SATA Controller',
-                    '--add', 'sata',
-                    '--portcount', '5',
-                    '--controller', 'IntelAhci',
-                    '--bootable', 'on'
-                ]
+                if ! File.exist?(docker_disk) || ! File.exist?(data_disk)
+                    v.customize [
+                        'storagectl', :id,
+                        '--name', 'SATA Controller',
+                        '--add', 'sata',
+                        '--portcount', '5',
+                        '--controller', 'IntelAhci',
+                        '--bootable', 'on'
+                    ]
+                end
                 if ! File.exist?(docker_disk)
                     v.customize [
                         'createhd', 
@@ -66,7 +68,7 @@ Vagrant.configure("2") do |config|
             end
         end
         # 使用shell脚本进行软件安装和配置
-        docker.vm.provision "shell", inline: <<-SHELL
+        docker.vm.provision "shell", run: "always", inline: <<-SHELL
             systemctl restart network
             systemctl restart sshd
             echo -e "\033[32mvirtual machine docker#{i} init success!\033[0m"
