@@ -16,6 +16,8 @@ cp /vagrant/docker.repo /etc/yum.repos.d/docker.repo
 yum update -y
 yum install docker-engine tmux wget lrzsz vim net-tools zsh bind-utils git -y
 
+git clone https://github.com/mritd/shell_scripts.git
+
 sed -i 's/^#RSAAuthentication.*/RSAAuthentication\ yes/g' /etc/ssh/sshd_config
 sed -i 's/^#PubkeyAuthentication.*/PubkeyAuthentication\ yes/g' /etc/ssh/sshd_config
 sed -i 's/^PasswordAuthentication.*/PasswordAuthentication\ yes/g' /etc/ssh/sshd_config
