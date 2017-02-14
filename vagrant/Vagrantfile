@@ -23,22 +23,32 @@ Vagrant.configure("2") do |config|
             v.cpus = 1
             # 增加磁盘
             docker_disk = "/data/vm/disk/docker-disk#{i}.vdi"
-            #data_disk = "/data/vm/disk/data-disk#{i}.vdi"
-            v.customize [
-                'storagectl', :id,
-                '--name', 'SATA Controller',
-                '--add', 'sata',
-                '--portcount', '5',
-                '--controller', 'IntelAhci',
-                '--bootable', 'on'
-            ]
-            if ARGV[0] == "up" && ! File.exist?(docker_disk) 
+            data_disk = "/data/vm/disk/data-disk#{i}.vdi"
+            if ARGV[0] == "up"
                 v.customize [
-                    'createhd', 
-                    '--filename', docker_disk, 
-                    '--format', 'VDI', 
-                    '--size', 100000 * 1024 # 10 GB
-                ] 
+                    'storagectl', :id,
+                    '--name', 'SATA Controller',
+                    '--add', 'sata',
+                    '--portcount', '5',
+                    '--controller', 'IntelAhci',
+                    '--bootable', 'on'
+                ]
+                if ! File.exist?(docker_disk)
+                    v.customize [
+                        'createhd', 
+                        '--filename', docker_disk, 
+                        '--format', 'VDI', 
+                        '--size', 100000 * 1024 # 10 GB
+                    ] 
+                end
+                if ! File.exist?(data_disk)
+                    v.customize [
+                        'createhd', 
+                        '--filename', data_disk, 
+                        '--format', 'VDI', 
+                        '--size', 100000 * 1024 # 10 GB
+                    ] 
+                end
                 v.customize [
                     'storageattach', :id, 
                     '--storagectl', 'SATA Controller', 
@@ -46,22 +56,14 @@ Vagrant.configure("2") do |config|
                     '--type', 'hdd', '--medium', 
                     docker_disk
                 ]
-            end 
-            #if ARGV[0] == "up" && ! File.exist?(data_disk) 
-            #    v.customize [
-            #        'createhd', 
-            #        '--filename', docker_disk, 
-            #        '--format', 'VDI', 
-            #        '--size', 100000 * 1024 # 10 GB
-            #    ] 
-            #    v.customize [
-            #        'storageattach', :id, 
-            #        '--storagectl', 'SATA Controller', 
-            #        '--port', 1, '--device', 0, 
-            #        '--type', 'hdd', '--medium', 
-            #        data_disk
-            #    ]
-            #end 
+                v.customize [
+                    'storageattach', :id, 
+                    '--storagectl', 'SATA Controller', 
+                    '--port', 2, '--device', 0, 
+                    '--type', 'hdd', '--medium', 
+                    data_disk
+                ]
+            end
         end
         # 使用shell脚本进行软件安装和配置
         docker.vm.provision "shell", inline: <<-SHELL
