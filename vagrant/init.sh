@@ -15,7 +15,7 @@ cp /vagrant/docker.repo /etc/yum.repos.d/docker.repo
 cp /vagrant/mritd.repo /etc/yum.repos.d/mritd.repo
 
 yum update -y
-yum install docker-engine tmux wget lrzsz vim net-tools zsh bind-utils git -y
+yum install docker-engine tmux wget lrzsz vim net-tools zsh bind-utils git epel-release -y
 
 sudo su root && sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 sudo su root && git clone https://github.com/mritd/shell_scripts.git /root/shell_scripts
