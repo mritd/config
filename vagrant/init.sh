@@ -15,9 +15,9 @@ cp /vagrant/docker.repo /etc/yum.repos.d/docker.repo
 cp /vagrant/mritd.repo /etc/yum.repos.d/mritd.repo
 
 yum update -y
-yum install docker-engine-1.12.5-1.el7.centos tmux wget lrzsz vim net-tools zsh bind-utils git epel-release -y
+yum install docker-engine-1.12.5-1.el7.centos docker-engine-selinux-1.12.5-1.el7.centos tmux wget lrzsz vim net-tools zsh bind-utils git epel-release -y
 
-sudo su root && sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+sudo su root && sh -c "$( wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 sudo su root && git clone https://github.com/mritd/shell_scripts.git /root/shell_scripts
 sudo su root && bash ~/shell_scripts/docker_devicemapper.sh /dev/sda
 sudo su root && mkdir /etc/systemd/system/docker.service.d || true && \
