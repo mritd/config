@@ -83,6 +83,7 @@ Vagrant.configure("2") do |config|
             # 每次开机后重启 network 和 ssh，解决公网网卡不启动问题 
             docker.vm.provision "shell", run: "always", inline: <<-SHELL
                 systemctl restart network
+                ifup eth1
                 systemctl restart sshd
                 echo -e "\033[32mvirtual machine docker#{i} init success!\033[0m"
             SHELL
