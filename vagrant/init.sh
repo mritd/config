@@ -27,6 +27,10 @@ tee /etc/systemd/system/docker.service.d/socks5-proxy.conf <<-EOF
 Environment="ALL_PROXY=socks5://192.168.1.105:1080"
 EOF
 
+systemctl enable docker
+systemctl start docker
+for imageName in `ls /vagrant/kargo_images/*.tar`;do docker load < $imageName;done
+
 sudo su root && mkdir ~/.ssh && cat /vagrant/authorized_keys >> ~/.ssh/authorized_keys
 sed -i 's/^#RSAAuthentication.*/RSAAuthentication\ yes/g' /etc/ssh/sshd_config
 sed -i 's/^#PubkeyAuthentication.*/PubkeyAuthentication\ yes/g' /etc/ssh/sshd_config
