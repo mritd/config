@@ -12,10 +12,11 @@ chmod +x /usr/local/bin/proxy
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
 cp /vagrant/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
 cp /vagrant/docker.repo /etc/yum.repos.d/docker.repo
+cp /vagrant/epel.repo /etc/yum.repos.d/epel.repo
 cp /vagrant/mritd.repo /etc/yum.repos.d/mritd.repo
 
 yum update -y
-yum install docker-engine-1.12.5-1.el7.centos docker-engine-selinux-1.12.5-1.el7.centos tmux wget lrzsz vim net-tools zsh bind-utils git epel-release -y
+yum install docker-engine-1.12.5-1.el7.centos docker-engine-selinux-1.12.5-1.el7.centos tmux wget lrzsz vim net-tools zsh bind-utils git -y
 
 sudo su root && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 sudo su root && git clone https://github.com/mritd/shell_scripts.git /root/shell_scripts
