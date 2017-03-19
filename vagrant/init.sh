@@ -6,7 +6,6 @@ tee /usr/local/bin/proxy <<EOF
 #!/bin/bash
 http_proxy=http://192.168.1.110:8123 https_proxy=http://192.168.1.110:8123 \$*
 EOF
-
 chmod +x /usr/local/bin/proxy
 
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
@@ -19,8 +18,6 @@ yum update -y
 yum install docker-engine-1.12.6-1.el7.centos docker-engine-selinux-1.12.6-1.el7.centos tmux wget lrzsz vim net-tools zsh bind-utils git -y
 
 sudo su root && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sudo su root && git clone https://github.com/mritd/shell_scripts.git /root/shell_scripts
-sudo su root && bash ~/shell_scripts/docker_devicemapper.sh /dev/sda
 sudo su root && mkdir /etc/systemd/system/docker.service.d || true && \
 tee /etc/systemd/system/docker.service.d/socks5-proxy.conf <<-EOF
 [Service]
