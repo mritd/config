@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
     # 定义虚拟机数量
-    vms = Array(1..6)
+    vms = Array(1..5)
     # 数据盘存放目录
     $data_base_dir = "/data/vm/disk"
     vms.each do |i|
