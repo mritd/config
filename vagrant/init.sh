@@ -24,12 +24,12 @@ sudo su root && bash ~/shell_scripts/docker_devicemapper.sh /dev/sda
 sudo su root && mkdir /etc/systemd/system/docker.service.d || true && \
 tee /etc/systemd/system/docker.service.d/socks5-proxy.conf <<-EOF
 [Service]
-Environment="ALL_PROXY=socks5://192.168.1.105:1080"
+Environment="ALL_PROXY=socks5://192.168.1.110:1083"
 EOF
 
 systemctl enable docker
 systemctl start docker
-for imageName in `ls /vagrant/kargo_images/*.tar`;do docker load < $imageName;done
+#for imageName in `ls /vagrant/kargo_images/*.tar`;do docker load < $imageName;done
 
 sudo su root && mkdir ~/.ssh && cat /vagrant/authorized_keys >> ~/.ssh/authorized_keys
 sed -i 's/^#RSAAuthentication.*/RSAAuthentication\ yes/g' /etc/ssh/sshd_config
