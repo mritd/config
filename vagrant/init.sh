@@ -3,7 +3,6 @@
 set -e
 
 echo -e "\033[1;33mConfig proxy...\033[0m"
-
 tee /usr/local/bin/proxy <<EOF
 #!/bin/bash
 http_proxy=http://192.168.1.110:8123 https_proxy=http://192.168.1.110:8123 \$*
