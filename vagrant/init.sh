@@ -22,7 +22,7 @@ echo -e "\033[1;33mInstall oh-my-zsh...\033[0m"
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 echo -e "\033[1;33mInstall Docker...\033[0m"
-/usr/local/bin/proxy yum install /vagrant/rpms/docker-engine-1.12.6-1.el7.centos.x86_64.rpm /vagrant/rpms/docker-engine-selinux-1.12.6-1.el7.centos.x86_64.rpm -y
+yum install -y docker-engine-1.12.6-1.el7.centos.x86_64 
 
 echo -e "\033[1;33mSetting Docker Proxy...\033[0m"
 mkdir /etc/systemd/system/docker.service.d || true && \
