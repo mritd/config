@@ -67,7 +67,7 @@ set tabstop=4
 " 设置格式化时制表符占用空格数
 set shiftwidth=4
 " 让 vim 把连续数量的空格视为一个制表符
-set softtabstop=4
+" set softtabstop=4
 
 " 随 vim 自启动
 let g:indent_guides_enable_on_vim_startup=1
