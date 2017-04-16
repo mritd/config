@@ -1,0 +1,7 @@
+[mritd]
+name=Mritd Repository
+baseurl=https://yumrepo.b0.upaiyun.com/centos/7/x86_64
+enabled=1
+gpgcheck=1
+gpgkey=https://mritd.b0.upaiyun.com/keys/rpm.public.key
+gpgkey=https://mirrors.tuna.tsinghua.edu.cn/docker/yum/gpg

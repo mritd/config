@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/root/git_projects/config/vagrant/dokku","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
