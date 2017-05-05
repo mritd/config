@@ -13,10 +13,10 @@ echo -e "\033[1;33mAdd mritd repo...\033[0m"
 cp /vagrant/mritd.repo /etc/yum.repos.d/mritd.repo
 
 echo -e "\033[1;33mUpdating...\033[0m"
-/usr/local/bin/proxy yum update -y
+yum update -y
 
 echo -e "\033[1;33mInstall Packages...\033[0m"
-/usr/local/bin/proxy yum install tmux wget lrzsz vim net-tools zsh bind-utils git -y
+yum install tmux wget lrzsz vim net-tools zsh bind-utils git -y
 
 echo -e "\033[1;33mInstall oh-my-zsh...\033[0m"
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
