@@ -1,2 +1,2 @@
-vagrant/.vagrant/
+vagrant/**/.vagrant/
 vagrant/kargo_images
