@@ -1,6 +1,0 @@
-[dockerrepo]
-name=Docker Repository
-baseurl=https://mirrors.tuna.tsinghua.edu.cn/docker/yum/repo/centos7
-enabled=1
-gpgcheck=1
-gpgkey=https://mirrors.tuna.tsinghua.edu.cn/docker/yum/gpg
