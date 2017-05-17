@@ -5,7 +5,7 @@ set -e
 echo -e "\033[1;33mConfig proxy...\033[0m"
 tee /usr/local/bin/proxy <<EOF
 #!/bin/bash
-http_proxy=http://192.168.1.21:8123 https_proxy=http://192.168.1.21:8123 \$*
+http_proxy=http://192.168.1.20:8123 https_proxy=http://192.168.1.20:8123 \$*
 EOF
 chmod +x /usr/local/bin/proxy
 
@@ -28,7 +28,7 @@ echo -e "\033[1;33mSetting Docker Proxy...\033[0m"
 mkdir /etc/systemd/system/docker.service.d || true && \
 tee /etc/systemd/system/docker.service.d/socks5-proxy.conf <<-EOF
 [Service]
-Environment="ALL_PROXY=socks5://192.168.1.21:1083"
+Environment="ALL_PROXY=socks5://192.168.1.20:1083"
 EOF
 
 echo -e "\033[1;33mStart and enable Docker...\033[0m"
