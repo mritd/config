@@ -13,6 +13,10 @@ echo -e "\033[1;33mConfig timezone...\033[0m"
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 echo "Asia/Shanghai" > /etc/timezone
 
+echo -e "\033[1;33mSync time...\033[0m"
+/usr/sbin/ntpdate 0.cn.pool.ntp.org
+echo "  *  1  *  *  *     root  /usr/sbin/ntpdate 0.cn.pool.ntp.org" >> /etc/crontab
+
 echo -e "\033[1;33mAdd mritd repo...\033[0m"
 cp /vagrant/mritd.repo /etc/yum.repos.d/mritd.repo
 
@@ -20,7 +24,7 @@ echo -e "\033[1;33mUpdating...\033[0m"
 yum update -y
 
 echo -e "\033[1;33mInstall Packages...\033[0m"
-yum install tmux wget lrzsz vim net-tools zsh bind-utils git -y
+yum install tmux wget lrzsz vim net-tools zsh bind-utils git ntp -y
 
 echo -e "\033[1;33mInstall oh-my-zsh...\033[0m"
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
