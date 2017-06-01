@@ -9,6 +9,10 @@ http_proxy=http://192.168.1.20:8123 https_proxy=http://192.168.1.20:8123 \$*
 EOF
 chmod +x /usr/local/bin/proxy
 
+echo -e "\033[1;33mConfig timezone...\033[0m"
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+echo "Asia/Shanghai" > /etc/timezone
+
 echo -e "\033[1;33mAdd mritd repo...\033[0m"
 cp /vagrant/mritd.repo /etc/yum.repos.d/mritd.repo
 
