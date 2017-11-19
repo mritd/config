@@ -1,3 +1,5 @@
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" PluginInstall
 " 定义快捷键的前缀，即<Leader>
 let mapleader=";"
 " 开启文件类型侦测
