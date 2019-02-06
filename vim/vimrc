@@ -96,7 +96,7 @@ set guioptions-=T
 set nowrap
 " 配色方案
 set background=dark
-colorscheme solarized
+colorscheme solarized8
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
 nmap <Leader>fl :NERDTreeToggle<CR>
 " 设置NERDTree子窗口宽度
