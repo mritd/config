@@ -4,7 +4,6 @@ git@github.com:nathanaelkane/vim-indent-guides.git
 git@github.com:kshenoy/vim-signature.git
 git@github.com:terryma/vim-multiple-cursors.git
 git@github.com:scrooloose/nerdtree.git
-git@github.com:mritd/mritd.github.io.git jekyll
 git@github.com:godlygeek/tabular.git
 git@github.com:plasticboy/vim-markdown.git
 git@github.com:ekalinin/Dockerfile.vim.git
