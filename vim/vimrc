@@ -1,11 +1,8 @@
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" PluginInstall
 " 定义快捷键的前缀，即<Leader>
 let mapleader=";"
 " 开启文件类型侦测
-" fiLetype on
 " 根据侦测到的不同类型加载对应的插件
- filetype plugin on
+filetype plugin indent on
 " 定义快捷键到行首和行尾
 nmap LB 0
 nmap LE $
@@ -70,7 +67,6 @@ set tabstop=4
 set shiftwidth=4
 " 让 vim 把连续数量的空格视为一个制表符
 " set softtabstop=4
-
 " 随 vim 自启动
 let g:indent_guides_enable_on_vim_startup=1
 " 从第二层开始可视化显示缩进
@@ -79,16 +75,13 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 " 快捷键 i 开/关缩进可视化
 :nmap <silent> <Leader>i <Plug>IndentGuidesToggle
-
 " 基于缩进或语法进行代码折叠
 "set foldmethod=indent
 set foldmethod=syntax
 " 启动 vim 时关闭折叠代码
 set nofoldenable
-
 " delete 增强，解决 mac delete 删除失效问题
 set backspace=2
-
 " 禁止光标闪烁
 set gcr=a:block-blinkon0
 " 禁止显示滚动条
@@ -101,50 +94,9 @@ set guioptions-=m
 set guioptions-=T
 " 禁止折行
 set nowrap
-
-" vundle 环境设置
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-" vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-" Plugin 'tomasr/molokai'
-" Plugin 'vim-scripts/phd'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'derekwyatt/vim-fswitch'
-Plugin 'kshenoy/vim-signature'
-Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
-Plugin 'majutsushi/tagbar'
-Plugin 'vim-scripts/indexer.tar.gz'
-Plugin 'vim-scripts/DfrankUtil'
-Plugin 'vim-scripts/vimprj'
-Plugin 'dyng/ctrlsf.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'scrooloose/nerdcommenter'
-" Plugin 'vim-scripts/DrawIt'
-" Plugin 'SirVer/ultisnips'
-" Plugin 'Valloric/YouCompleteMe'
-" Plugin 'derekwyatt/vim-protodef'
-Plugin 'scrooloose/nerdtree'
-Plugin 'fholgado/minibufexpl.vim'
-" Plugin 'gcmt/wildfire.vim'
-" Plugin 'sjl/gundo.vim'
-" Plugin 'Lokaltog/vim-easymotion'
-Plugin 'suan/vim-instant-markdown'
-" Plugin 'lilydjwg/fcitx.vim'
-Plugin 'ekalinin/Dockerfile.vim'
-" 插件列表结束
-call vundle#end()
-filetype plugin indent on
-
-
 " 配色方案
 set background=dark
 colorscheme solarized
-
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
 nmap <Leader>fl :NERDTreeToggle<CR>
 " 设置NERDTree子窗口宽度
@@ -157,8 +109,12 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 " 删除文件时自动删除文件对应 buffer
 let NERDTreeAutoDeleteBuffer=1
-
-
+" 自动完成代码片段触发
+let g:UltiSnipsExpandTrigger="<tab>"
+" 切换到下一个触发点
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+" 切换到上一个触发点
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 " 显示/隐藏 MiniBufExplorer 窗口
 map <Leader>bl :MBEToggle<cr>
 " buffer 切换快捷键
