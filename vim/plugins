@@ -1,0 +1,13 @@
+git@github.com:vim-airline/vim-airline.git
+git@github.com:vim-airline/vim-airline-themes.git
+git@github.com:nathanaelkane/vim-indent-guides.git
+git@github.com:kshenoy/vim-signature.git
+git@github.com:terryma/vim-multiple-cursors.git
+git@github.com:scrooloose/nerdtree.git
+git@github.com:mritd/mritd.github.io.git jekyll
+git@github.com:godlygeek/tabular.git
+git@github.com:plasticboy/vim-markdown.git
+git@github.com:ekalinin/Dockerfile.vim.git
+git@github.com:SirVer/ultisnips.git
+git@github.com:honza/vim-snippets.git
+git@github.com:andrewstuart/vim-kubernetes.git
