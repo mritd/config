@@ -85,7 +85,7 @@ PROMPT='%{$fg_bold[blue]%}%M ${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-zsh ~/.vim/pack/mritd/start/vim-solarized8/scripts/solarized8.sh
+#zsh ~/.vim/pack/mritd/start/vim-solarized8/scripts/solarized8.sh
 
 export GOROOT='/usr/local/go'
 export GOPATH='/root/gopath'
