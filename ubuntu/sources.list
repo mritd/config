@@ -4,13 +4,13 @@
 
 
 ###### Ubuntu Main Repos
-deb http://archive.ubuntu.com/ubuntu/ $(lsb_release -cs) main restricted universe multiverse 
-deb-src http://archive.ubuntu.com/ubuntu/ $(lsb_release -cs) main restricted universe multiverse 
+deb http://archive.ubuntu.com/ubuntu/ {{OS_RELEASE}} main restricted universe multiverse 
+deb-src http://archive.ubuntu.com/ubuntu/ {{OS_RELEASE}} main restricted universe multiverse 
 
 ###### Ubuntu Update Repos
-deb http://archive.ubuntu.com/ubuntu/ $(lsb_release -cs)-security main restricted universe multiverse 
-deb http://archive.ubuntu.com/ubuntu/ $(lsb_release -cs)-updates main restricted universe multiverse 
-deb http://archive.ubuntu.com/ubuntu/ $(lsb_release -cs)-backports main restricted universe multiverse 
-deb-src http://archive.ubuntu.com/ubuntu/ $(lsb_release -cs)-security main restricted universe multiverse 
-deb-src http://archive.ubuntu.com/ubuntu/ $(lsb_release -cs)-updates main restricted universe multiverse 
-deb-src http://archive.ubuntu.com/ubuntu/ $(lsb_release -cs)-backports main restricted universe multiverse 
+deb http://archive.ubuntu.com/ubuntu/ {{OS_RELEASE}}-security main restricted universe multiverse 
+deb http://archive.ubuntu.com/ubuntu/ {{OS_RELEASE}}-updates main restricted universe multiverse 
+deb http://archive.ubuntu.com/ubuntu/ {{OS_RELEASE}}-backports main restricted universe multiverse 
+deb-src http://archive.ubuntu.com/ubuntu/ {{OS_RELEASE}}-security main restricted universe multiverse 
+deb-src http://archive.ubuntu.com/ubuntu/ {{OS_RELEASE}}-updates main restricted universe multiverse 
+deb-src http://archive.ubuntu.com/ubuntu/ {{OS_RELEASE}}-backports main restricted universe multiverse 

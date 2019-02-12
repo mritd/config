@@ -1,2 +1,2 @@
-deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable
-#deb [arch=amd64] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian $(lsb_release -cs) stable
+deb [arch=amd64] https://download.docker.com/linux/ubuntu {{OS_RELEASE}} stable
+#deb [arch=amd64] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian {{OS_RELEASE}} stable
