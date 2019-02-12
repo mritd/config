@@ -1,0 +1,4 @@
+Host github github.com
+    #Hostname github.com
+    #User git
+    ProxyCommand /usr/local/bin/proxy-wrapper '%h %p'
