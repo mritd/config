@@ -94,7 +94,8 @@ set guioptions-=m
 set guioptions-=T
 " 禁止折行
 set nowrap
-" 配色方案
+" 配色方案(真彩色支持)
+set termguicolors
 set background=dark
 colorscheme solarized8
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
