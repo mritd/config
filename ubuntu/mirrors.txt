@@ -1,8 +1,0 @@
-http://mirrors.aliyun.com/ubuntu/
-http://mirrors.huaweicloud.com/repository/ubuntu/
-http://mirrors.yun-idc.com/ubuntu/
-http://mirrors.cn99.com/ubuntu/
-http://mirrors.tuna.tsinghua.edu.cn/ubuntu/
-http://mirrors.ustc.edu.cn/ubuntu/
-http://mirrors.sohu.com/ubuntu/
-http://archive.ubuntu.com/ubuntu/
