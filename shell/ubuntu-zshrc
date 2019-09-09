@@ -89,7 +89,10 @@ PROMPT='%{$fg_bold[blue]%}%M ${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git
 
 export GOROOT='/usr/local/go'
 export GOPATH='/root/gopath'
-export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
+export GO111MODULE=on
+export GOPROXY='https://goproxy.io'
+export GOSUMDB='sum.golang.google.cn'
+export PATH="${PATH}:${GOROOT}/bin:${GOPATH}/bin"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
