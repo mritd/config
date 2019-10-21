@@ -62,10 +62,9 @@ plugins=(git docker kubectl zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-PROMPT='%{$fg_bold[blue]%}%M ${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
-
 # User configuration
 
+PROMPT='%(?:%{[01;32m%}➜ :%{[01;31m%}➜ ) %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -92,7 +91,7 @@ export GOPATH='/root/gopath'
 export GO111MODULE=on
 export GOPROXY='https://goproxy.io'
 export GOSUMDB='sum.golang.google.cn'
-export PATH="${PATH}:${GOROOT}/bin:${GOPATH}/bin"
+export PATH="${GOROOT}/bin:${GOPATH}/bin:${PATH}"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
