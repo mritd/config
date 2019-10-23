@@ -64,7 +64,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-PROMPT='%(?:%{[01;32m%}➜ :%{[01;31m%}➜ ) %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+PROMPT='%(?:%{[01;32m%}%M ➜ :%{[01;31m%}%M ➜ ) %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
