@@ -1,4 +1,7 @@
 Host github github.com
-    #Hostname github.com
-    #User git
-    ProxyCommand /usr/local/bin/proxy-wrapper '%h %p'
+    # apt install connect-proxy -y
+    # export SOCKS5_USER=user
+    # export SOCKS5_PASSWORD=password
+    #ProxyCommand connect-proxy -S 127.0.0.1:8456 %h %p
+    # apt install nmap -y
+    ProxyCommand ncat --proxy 127.0.0.1:8456 --proxy-type socks5 --proxy-auth user:password %h %p
