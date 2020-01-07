@@ -15,6 +15,7 @@ ExecStart=/usr/bin/dockerd  -H fd:// \
                             --containerd=/run/containerd/containerd.sock \
                             --init \
                             --live-restore \
+                            --exec-opt native.cgroupdriver=systemd \
                             --data-root=/data/docker \
                             --log-driver json-file \
                             --log-opt max-size=30m \
