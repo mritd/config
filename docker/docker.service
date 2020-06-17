@@ -12,6 +12,3 @@ ExecStart=/usr/bin/dockerd  -H fd:// \
 # support kubernetes CSI(Mount propagation)
 # refs: https://kubernetes.io/docs/concepts/storage/volumes/#csi
 MountFlags=shared
-
-[Install]
-WantedBy=multi-user.target
